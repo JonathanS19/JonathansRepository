@@ -1,4 +1,4 @@
-# Day 1
+# DAY 1
 # Basic Printing
 print('Day 1 - Python Print Function')
 print('The function is declared like this:')
@@ -31,3 +31,110 @@ a = b
 b = c
 print("a: " + a)
 print("b: " + b)
+
+
+# DAY 2
+
+no = input()
+add = int(no[0])+int(no[1])
+print(add)
+
+#Basic Bmi calculator
+# 1st input: enter height in meters e.g: 1.65
+height = float(input())
+# 2nd input: enter weight in kilograms e.g: 72
+weight = float(input())
+bmi = weight/(height*height)
+print(int(bmi))
+
+# DAY 3
+
+# Odd and Even
+no = int(input())
+if no%2 == 0:
+  print("This is an even number.")
+else :
+  print("This is an odd number.")
+
+# Bmi 2.0
+# Enter your height in meters e.g., 1.55
+height = float(input())
+# Enter your weight in kilograms e.g., 72
+weight = float(input())
+
+bmi = float(weight/(height*height))
+if bmi<18.5:
+  print(f"Your BMI is {bmi}, you are underweight.")
+  
+if bmi>18.5 and bmi<25:
+  print(f"Your BMI is {bmi}, you have a normal weight.")
+  
+if bmi>=25 and bmi<30:
+  print(f"Your BMI is {bmi}, you are slightly overweight.")
+  
+if bmi>=30 and bmi<35:
+  print(f"Your BMI is {bmi}, you are obese.")
+  
+if bmi>=35:
+  print(f"Your BMI is {bmi}, you are clinically obese.")
+
+#Leap year or not 
+year = int(input())
+if year%4==0 :
+  if year%100==0:
+    if year%400==0:
+      print("Leap year")
+    else:
+       print("Not leap year")
+  else:
+       print("Leap year")
+else:
+  print("Not leap year")
+
+#Pizza order 
+print("Thank you for choosing Python Pizza Deliveries!")
+size = input() # What size pizza do you want? S, M, or L
+add_pepperoni = input() # Do you want pepperoni? Y or N
+extra_cheese = input() # Do you want extra cheese? Y or N
+if size == 'S':
+  bill = 15
+  if add_pepperoni == 'Y':
+    bill+=2
+if size == 'M':
+  bill = 20
+  if add_pepperoni == 'Y':
+    bill+=3
+if size == 'L':
+  bill = 25
+  if add_pepperoni == 'Y':
+    bill+=3
+if extra_cheese == 'Y':
+  bill+=1
+print(f"Your final bill is: ${bill}.")
+
+#Love calculator 
+print("The Love Calculator is calculating your score...")
+name1 = input() # What is your name?
+name2 = input() # What is their name?
+cn = name1+name2
+ln = cn.lower()
+t = ln.count('t')
+r = ln.count('r')
+u = ln.count('u')
+e = ln.count('e')
+fd = str(t+r+u+e)
+
+l = ln.count('l')
+o = ln.count('o')
+v = ln.count('v')
+e = ln.count('e')
+ld = str(l+o+v+e)
+cd = int(fd+ld)
+if cd<10 or cd>90:
+  print(f"Your score is {cd}, you go together like coke and mentos.")
+  
+if 40<cd<50:
+  print(f"Your score is {cd}, you are alright together.")
+  
+if cd<40 or cd>50 and cd<90:
+  print(f"Your score is {cd}.")
