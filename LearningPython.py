@@ -138,3 +138,39 @@ if 40<cd<50:
   
 if cd<40 or cd>50 and cd<90:
   print(f"Your score is {cd}.")
+
+# DAY 4
+
+#Heads or Tails
+import random
+ran = random.randint(0,1)
+
+if ran == 0:
+  print("Tails")
+else:
+  print("Heads")
+
+#Bankers Roulette
+names = names_string.split(", ")
+import random
+lim = len(names)
+ran = random.randint(0,lim-1)
+print(names[ran],"is going to buy the meal today!")
+
+#Treasure Hunt
+line1 = ["⬜️","️⬜️","️⬜️"]
+line2 = ["⬜️","⬜️","️⬜️"]
+line3 = ["⬜️️","⬜️️","⬜️️"]
+map = [line1, line2, line3]
+print("Hiding your treasure! X marks the spot.")
+position = input() # Where do you want to put the treasure?
+pos1 = position[0]
+pos2 = int(position[1])-1
+if pos1=='A':
+  pos3 = 0
+if pos1=='B':
+  pos3 = 1
+else :
+  pos3 = 2
+map[pos2][pos3]= "X"
+print(f"{line1}\n{line2}\n{line3}")
