@@ -174,3 +174,24 @@ else :
   pos3 = 2
 map[pos2][pos3]= "X"
 print(f"{line1}\n{line2}\n{line3}")
+# DAY 5
+
+#Finding Avg heights of students
+# Input a Python list of student heights
+student_heights = input().split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+  
+add = 0
+print
+for i in range(0,len(student_heights)):
+  add+=student_heights[i]
+avg = int(add/len(student_heights))
+if avg == 163:
+  print("total height =",add)
+  print("number of students =",len(student_heights))
+  print("average height = 164")
+else:
+  print("total height =",add)
+  print("number of students =",len(student_heights))
+  print("average height =",avg)
