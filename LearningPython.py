@@ -195,3 +195,15 @@ else:
   print("total height =",add)
   print("number of students =",len(student_heights))
   print("average height =",avg)
+
+# Highest Score
+# Input a list of student scores
+student_scores = input().split()
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+
+max=0
+for i in range(0, len(student_scores)):
+  if student_scores[i]>max:
+    max = student_scores[i]
+print("The highest score in the class is:",max)
