@@ -227,3 +227,36 @@ for i in range(1,101):
     print("Buzz")
   else:
     print(i)
+
+
+#Hurdle 1 
+
+move()
+def jump():
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left() 
+    move()
+    turn_left()
+    move()
+
+for i in range(0,5): 
+    jump()
+
+turn_left()
+move()
+turn_left()
+turn_left()
+turn_left()
+move()
+turn_left()
+turn_left()
+turn_left() 
+move()
+turn_left()
