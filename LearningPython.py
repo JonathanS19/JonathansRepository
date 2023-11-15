@@ -260,3 +260,22 @@ turn_left()
 turn_left() 
 move()
 turn_left()
+
+#Hurdle 2 
+
+def jump():
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+   
+while not at_goal():
+    move()
+    jump()
+    turn_left()
