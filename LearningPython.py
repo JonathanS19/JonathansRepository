@@ -279,3 +279,28 @@ while not at_goal():
     move()
     jump()
     turn_left()
+
+# Hurdle 3 
+
+def jump():
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+    turn_left()
+    move()
+   
+while not at_goal():
+    while front_is_clear() == True:
+        if at_goal() == True:
+            break
+        else:  
+            move()
+    else:
+        jump()
+    
+    turn_left()
