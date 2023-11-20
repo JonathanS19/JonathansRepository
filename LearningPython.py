@@ -304,3 +304,24 @@ while not at_goal():
         jump()
     
     turn_left()
+
+# Hurdle 4 
+
+while front_is_clear() == True:
+    if at_goal() == True:
+        break
+    else:
+        move()
+if wall_in_front() == True:
+    turn_left()
+    while wall_in_front() != True:
+        move()
+        turn_left()
+        turn_left()
+        turn_left()
+        if at_goal() == True:
+                    break
+        if wall_in_front() == True:
+            turn_left()
+            while wall_in_front() == True:
+                turn_left()
