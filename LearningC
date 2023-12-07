@@ -111,6 +111,28 @@ int main()
 4)Reversing a array:
 
 Method 1)
+//A rather easy method 
+#include<stdio.h>
+#include<stdlib.h>
+#include"Functions.c"
+int main()
+{
+    int temp,i,j;
+    int arr[]={12,18,97,56,74,57};
+    int size = sizeof(arr)/sizeof(arr[0]);
+
+    printf("Before reversal : ");
+    printarr(arr,size);
+    for(i=0,j=size-1;i<j;i++,j--)
+    {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    printf("After reversal : ");
+    printarr(arr,size);
+}
+
 
 
 Method 2)
