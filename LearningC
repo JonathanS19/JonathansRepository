@@ -199,3 +199,20 @@ int main()
     printf("\nArray after reversing : ");
     printarr(arr,size);
 }
+
+5)Strings
+
+i)Working with strings :
+#include<stdio.h>
+#include<stdlib.h>
+#include"Functions.c"
+int main()
+{
+    char name[30];
+    printf("Enter Your name :");
+    //scanf("%s",&name); This causes the input to break at the sight of a space
+    fgets(name,sizeof(name),stdin);
+    printf("Normal Name: %s",name);
+    name[0] = "X";
+    printf("Name with X : %s",name);
+}
