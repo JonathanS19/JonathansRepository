@@ -138,3 +138,42 @@ int main()
     printf("Array after reversing : ");
     printarr(arr,size);
 }
+
+//Same think but i have included a built in function of my own :)
+
+//This is the function :
+void enterval(int arr[],int n)
+{
+    printf("Enter the values of the array :\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("Element %d: ",i);
+        scanf("%d",&arr[i]);
+        printf("\n");
+    }
+}
+//The normal code follows below :
+#include<stdio.h>
+#include<stdlib.h>
+#include"Functions.c"
+int main()
+{
+    int i,j,temp;
+    int arr[4];
+    int size = sizeof(arr)/sizeof(arr[0]);
+    enterval(arr,size);
+
+    printf("\nArray before reversing :");
+    printarr(arr,size);
+    //assigning values to i and j
+
+    for(i=0,j=size-1;i<j;i++,j--)
+    {
+           temp = arr[i];
+           arr[i] = arr[j];
+           arr[j] = temp;
+
+    }
+    printf("\nArray after reversing : ");
+    printarr(arr,size);
+}
