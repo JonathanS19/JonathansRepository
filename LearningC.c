@@ -366,3 +366,28 @@ int main()
     }
 
 }
+9)While loops 
+
+a)Powers of a number
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+//Initialization
+int no,mul;
+int power,iter = 1;
+printf("Enter the number : ");
+scanf("%d",&no);
+mul = no;
+printf("Enter the power : ");
+scanf("%d",&power);
+
+//Multiplying
+while(iter!=power)
+{
+    mul = mul * no;
+    iter++;
+}
+printf("%d^%d = %d",no,power,mul);
+}
