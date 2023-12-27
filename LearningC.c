@@ -368,7 +368,7 @@ int main()
 }
 9)While loops 
 
-a)Powers of a number
+//a)Powers of a number
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -390,4 +390,47 @@ while(iter!=power)
     iter++;
 }
 printf("%d^%d = %d",no,power,mul);
+}
+
+//b)Multiplication tables with while
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+//Initialization
+int no,result;
+printf("Enter a number : ");
+scanf("%d",&no);
+int iter = 1;
+while(iter!=11)
+{
+    result = no*iter;
+    printf("%d x %d = %d\n",no,iter,result);
+    result = 0;
+    iter++;
+}
+}
+
+//Factorial using while
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+//Initialization
+int no,fact=1;
+printf("Enter a number : ");
+scanf("%d",&no);
+int iter = 1;
+while(iter!=no+1)
+{
+    fact = fact*iter;
+    printf("%d",iter);
+    while(iter!=no)
+    {
+        printf("*");
+        break;
+    }
+    iter++;
+}
+printf(" = %d",fact);
 }
