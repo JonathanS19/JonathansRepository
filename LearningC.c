@@ -457,3 +457,24 @@ int main()
     printf("The sum of the digits %d is %d",copy,sum);
 
 }
+
+//e)Reversing numbers 
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int rev = 0;
+    int no,seperate;
+    printf("Enter the number : ");
+    scanf("%d",&no);
+
+    //Reversing process
+    while(no!=0)
+    {
+       seperate = no%10;
+       no = no/10;
+       rev = rev*10+seperate;
+    }
+    printf("The reverse is %d",rev);
+}
