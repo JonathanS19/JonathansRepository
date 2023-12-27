@@ -324,3 +324,45 @@ int main()
     } 
 
 } 
+8)Diamond 
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int row,col;
+    int size,spc;
+    printf("Enter the number : ");
+    scanf("%d",&size);
+
+    //Upper Pyramid
+    for(col = 0;col<size;col++)
+    {
+        for(spc = col;spc<=size;spc++)
+        {
+            printf(" ");
+        }
+        for(row = 0;row<col;row++)
+        {
+            printf(" *");
+        }
+        printf("\n");
+    }
+
+
+    //Lower Pyramid
+    for(col = size-1;col>=0;col--)
+    {
+        for(spc = 0;spc<size-col;spc++)
+        {
+            printf(" ");
+        }
+        for(row = 0;row<=col;row++)
+        {
+            printf(" *");
+        }
+        printf("\n");
+    }
+
+}
