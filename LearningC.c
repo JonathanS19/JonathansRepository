@@ -411,7 +411,7 @@ while(iter!=11)
 }
 }
 
-//Factorial using while
+c)//Factorial using while
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -433,4 +433,27 @@ while(iter!=no+1)
     iter++;
 }
 printf(" = %d",fact);
+}
+
+//d)Sum of digits 
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    printf("Sum of digits\n");
+    int iter,no;
+    printf("Enter a number : ");
+    scanf("%d",&no);
+    int sep,sum;
+    int copy = no;
+    //Seperating digits
+    while(no!=0)
+    {
+        sep = no%10;
+        no = no/10;
+        sum = sum + sep;
+    }
+    printf("The sum of the digits %d is %d",copy,sum);
+
 }
