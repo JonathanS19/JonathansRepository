@@ -324,8 +324,9 @@ int main()
     } 
 
 } 
-8)Diamond 
+8)Patterns
 
+a)Diamond
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -365,6 +366,32 @@ int main()
         printf("\n");
     }
 
+}
+
+b)Rhombus 
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int cols,rows;
+    int spc,no;
+    printf("Enter the size : ");
+    scanf("%d",&no);
+
+    //Creating the Rhombus
+    for(cols = 0;cols<no;cols++)
+    {
+        for(spc = 0 ;spc < (no-1)-cols; spc++)
+        {
+            printf(" ");
+        }
+        for(rows = 0;rows<no;rows++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
 }
 9)While loops 
 
