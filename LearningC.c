@@ -393,6 +393,111 @@ int main()
         printf("\n");
     }
 }
+
+c)Butterfly Pattern
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+
+    //Initialization
+    int cols,rows;
+    int spc,no;
+    printf("Enter the size : ");
+    scanf("%d",&no);
+    int var = no*2;
+    int var1 = 2;
+/*
+    Top Half
+
+    //First Wing
+    //Upper Triangle
+    for(cols = 0;cols<=no;cols++)
+    {
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    //Second Wing
+    //Upper Triangle
+    for(cols = 0;cols<=no;cols++)
+    {
+        for(spc = 0;spc<(no-cols);spc++)
+        {
+            printf(" ");
+        }
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+*/
+    //Fused Top half
+    for(cols = 0;cols<=no;cols++)
+    {
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+
+        for(spc = 0;spc<=var+1;spc++)
+        {
+            printf(" ");
+        }
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+        var = var - 2;
+        printf("\n");
+
+    }
+/*
+     Lower Half
+        for(cols = no;cols>0;cols--)
+    {
+        for(rows = no;rows>(no-cols);rows--)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+        for(cols = no;cols>0;cols--)
+    {
+        for(spc = 0;spc<(no-cols);spc++)
+        {
+            printf(" ");
+        }
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+*/
+
+    //Attempt at fusing Lower Half
+    for(cols = no;cols>0;cols--)
+    {
+        for(rows = no;rows>(no-cols);rows--)
+        {
+            printf("*");
+        }
+        for(spc = 0;spc<var1;spc++)
+        {
+            printf(" ");
+        }
+        for(rows = 0;rows<cols;rows++)
+        {
+            printf("*");
+        }
+        var1 = var1+2;
+        printf("\n");
+    }
+}
 9)While loops 
 
 //a)Powers of a number
