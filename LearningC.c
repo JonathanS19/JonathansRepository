@@ -610,3 +610,42 @@ int main()
     }
     printf("The reverse is %d",rev);
 }
+
+9)Strings
+a)String Copy 
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int size;
+    printf("Enter the size of the array : ");
+    scanf("%d",&size);
+    char arr[size];
+    char copy[size];
+    int i,j;
+
+    //Taking the string
+    printf("Enter the String  : ");
+    for(i=0;i<size;i++)
+    {
+        scanf(" %c",&arr[i]);
+    }
+    printf("\nThe original string is : ");
+    for(j = 0;j<size;j++)
+    {
+        printf("%c",arr[j]);
+    }
+
+    //Making a copy
+    for(i=0;i<size;i++)
+    {
+        copy[i] = arr[i];
+    }
+    printf("\nCopied String : ");
+    for(j = 0;j<size;j++)
+    {
+        printf("%c",copy[j]);
+    }
+}
