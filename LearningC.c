@@ -645,6 +645,57 @@ int main()
     }
     printf("\nCopied String : ");
     for(j = 0;j<size;j++)
+
+    b)String Anagram
+    #include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int size;
+    int i,j,count = 0;
+    printf("Enter the size of the word : ");
+    scanf("%d",&size);
+    char word1[size],word2[size];
+
+    //Taking the 2 words
+    printf("\nEnter the 1st word : ");
+    for(i=0 ;i<size; i++)
+    {
+        scanf(" %c",&word1[i]);
+    }
+
+    printf("\nEnter the 2nd word : ");
+    for(i=0 ;i<size; i++)
+    {
+        scanf(" %c",&word2[i]);
+    }
+
+    //Checking for anagrams
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            printf("\nI = %c",word1[i]);
+            printf("\nJ = %c",word2[j]);
+            printf("\nCnt = %d",count);
+
+            if(word1[i] == word2[j])
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    if(count == size)
+    {
+        printf("\nIt is a anagram");
+    }
+    else
+    {
+        printf("\nIt is not a Anagram");
+    }
+}
     {
         printf("%c",copy[j]);
     }
