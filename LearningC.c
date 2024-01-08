@@ -700,3 +700,43 @@ int main()
         printf("%c",copy[j]);
     }
 }
+c)String Reversal :
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    //Initialization
+    int size,count;
+    printf("Enter the String Size: ");
+    scanf("%d",&size);
+    char arr[size];
+    int temp,i,j;
+
+    //Taking in a string
+    printf("Enter the string : \n");
+    for( i = 0 ;i<size;i++)
+    {
+        scanf(" %c",&arr[i]);
+    }
+    printf("Original String: ");
+    for(i=0;i<size;i++)
+    {
+        printf("%c",arr[i]);
+    }
+    printf("\n");
+
+    //Reversing String
+
+   for(i=0,j=size-1;i<j;i++,j--)
+   {
+       temp = arr[i];
+       arr[i] = arr[j];
+       arr[j] = temp;
+   }
+
+    printf("Reversed string is :");
+    for(i=0;i<size;i++)
+    {
+        printf("%c",arr[i]);
+    }
+}
