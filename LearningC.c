@@ -740,3 +740,22 @@ int main()
         printf("%c",arr[i]);
     }
 }
+
+10)// Area of circles using macro :
+
+Area of circle using macro :
+
+#include<stdio.h> 
+#include<stdlib.h>
+#define Pi 3.14
+#define square(x) (x*x)
+// area of circle = pi*r^2
+int main()
+{
+int radius;
+float area;
+printf("Enter the radius : ");
+scanf("%d",&radius);
+area = Pi*square(radius);
+printf("Area is %.2f",area);
+}
