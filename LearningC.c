@@ -1,3 +1,22 @@
+0)Basics 
+a)Voter
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int age;
+    printf("Enter your age : ");
+    scanf("%d",&age);
+
+    if(age<18)
+    {
+        printf("Too Young to vote !");
+    }
+    else
+        printf("You can vote!!");
+}
+
 1)Print the month 
 
 #include <stdio.h>
