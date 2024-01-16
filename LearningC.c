@@ -16,6 +16,28 @@ int main()
     else
         printf("You can vote!!");
 }
+a)Functions 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void sumofnum(int num1,int num2)
+{
+    int sum;
+    sum = num1+num2;
+    printf("The sum is %d",sum);
+}
+
+
+int main()
+{
+    int num1,num2;
+    int sum = 0;
+    printf("Enter the values : ");
+    scanf("%d%d",&num1,&num2);
+    sumofnum(num1,num2);
+
+}
 
 1)Print the month 
 
