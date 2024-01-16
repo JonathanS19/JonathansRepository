@@ -59,4 +59,22 @@ int main()
     }
     cout<<"The sum of the arrays is : "<<sum;
 }
+2)Functions 
+#include<iostream>
+using namespace std;
 
+void sumofnum(int num1,int num2)
+{
+    int sum = 0;
+    sum = num1+num2;
+    cout<<"The sum is "<<sum;
+
+}
+int main()
+{
+    int num1,num2;
+    cout<<"Enter the values : ";
+    cin>>num1>>num2;
+    sumofnum(num1,num2);
+
+}
