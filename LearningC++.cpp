@@ -78,3 +78,42 @@ int main()
     sumofnum(num1,num2);
 
 }
+5)Staircase
+a)With star
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int no;
+    cout<<"Enter the number of rows : ";
+    cin>>no;
+    int i,j;
+    for(i = 0;i<=no;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+b)With Numbers
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int no;
+    cout<<"Enter the number of rows : ";
+    cin>>no;
+    int i,j;
+    for(i = 0;i<=no;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
