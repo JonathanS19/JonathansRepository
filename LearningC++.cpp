@@ -117,3 +117,40 @@ int main()
         cout<<endl;
     }
 }
+
+6)Reverse staircase
+#include<iostream> 
+
+using namespace std; 
+
+  
+
+int main() 
+
+{ 
+
+    int no; 
+
+    cout<<"Enter the number of rows : "; 
+
+    cin>>no; 
+
+    int i,j; 
+
+    for(i=no;i>0;i--) 
+
+    { 
+
+        for(j=0;j<i;j++) 
+
+        { 
+
+            cout<<"*"; 
+
+        } 
+
+        cout<<endl; 
+
+    } 
+
+} 
