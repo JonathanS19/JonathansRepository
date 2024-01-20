@@ -154,3 +154,40 @@ int main()
     } 
 
 } 
+
+7)Hollow Box
+int main()
+{
+    int no;
+    int i,j,spc;
+    cout<<"Enter the size : ";
+    cin>>no;
+    int cnt = 0;
+    for(i=1;i<=no;i++)
+    {
+        cnt = 0;
+        for(j=0;j<no;j++)
+        {
+            if(cnt!=1)
+            {
+                if(i==1||i==no)
+                {
+                    cout<<"*";
+                }
+                else
+                {
+
+                    cout<<"*";
+                    for(spc=0;spc<(no-2);spc++)
+                    {
+                        cout<<" ";
+                    }
+                    cout<<"*";
+                    cnt++;
+                }
+            }
+        }
+        cout<<endl;
+    }
+
+}
