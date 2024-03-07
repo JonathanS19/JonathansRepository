@@ -290,6 +290,57 @@ Enter the size : 5
       *
 
 code - 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int rows,cols,n;
+    int val1;
+    cout<<"Enter the size : ";
+    cin>>n;
+
+    for(rows=0;rows<n;rows++)
+    {
+        if(rows%2==0)
+        {
+            val1=0;
+        }
+        else
+        {
+            val1=1;
+        }
+        for(cols=0;cols<=rows;cols++)
+        {
+            if(val1==0)
+            {
+                cout<<1;
+            }
+            else
+            {
+                cout<<0;
+            }
+            if(val1==0)
+            {
+                val1 = 1;
+            }
+            else
+            {
+                val1 = 0;
+            }
+        }
+        cout<<endl;
+    }
+}
+
+
+o/p - 
+Enter the size : 5
+1
+01
+101
+0101
+10101
 
       
 */
