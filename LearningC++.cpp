@@ -191,3 +191,105 @@ int main()
     }
 
 }
+
+/*
+Refresh Run 
+
+code - 
+#include<iostream>
+using namespace std;
+
+int main(){
+
+int size;
+int i,j;
+
+cout<<"Enter the size : ";
+cin>>size;
+
+
+for(i=0;i<size;i++)
+{
+    for(j=0;j<size;j++)
+    {
+        cout<<"*";
+    }
+    cout<<endl;
+}
+}
+
+o/p -
+Enter the size : 4
+****
+****
+****
+****
+
+code - 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int rows,cols;
+    int n;
+
+    cout<<"Enter the size : ";
+    cin>>n;
+    n++;
+    for(rows=1;rows<n;rows++)
+    {
+        for(cols=1;cols<=rows;cols++)
+        {
+            cout<<rows;
+        }
+        cout<<endl;
+    }
+}
+
+o/p - 
+Enter the size : 5
+1
+22
+333
+4444
+55555
+
+code - 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int rows,cols,n,spc;
+    cout<<"Enter the size : ";
+    cin>>n;
+
+    for(rows=n;rows>=0;rows--)
+    {
+        for(spc=0;spc<=(n-rows);spc++)
+        {
+            cout<<" ";
+        }
+        for(cols=0;cols<=rows;cols++)
+        {
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+}
+
+
+o/p - 
+Enter the size : 5
+ * * * * * *
+  * * * * *
+   * * * *
+    * * *
+     * *
+      *
+
+code - 
+
+      
+*/
