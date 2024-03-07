@@ -342,5 +342,82 @@ Enter the size : 5
 0101
 10101
 
+code - 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int rows,cols,n,cha;
+    int spc;
+    cout<<"Enter the size : ";
+    cin>>n;
+    cha = 65;
+    for(rows=0;rows<n;rows++)
+    {
+        for(spc=0;spc<=(n-rows);spc++)
+        {
+            cout<<" ";
+        }
+        for(cols=0;cols<=rows;cols++)
+        {
+            cout<<char(cha)<<" ";
+        }
+        cout<<endl;
+        cha++;
+    }
+}
+
+code -
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int rows,cols,n,cha;
+    int spc;
+    cout<<"Enter the size : ";
+    cin>>n;
+
+    for(rows=0;rows<n;rows++)
+    {
+        for(cols=0;cols<n;cols++)
+        {
+            if(rows==0||rows==(n-1))
+            {
+                cout<<"*";
+            }
+            else
+            {
+                if(cols==0||cols==n-1)
+                {
+                    cout<<"*";
+                }
+                else
+                {
+                    cout<<" ";
+                }
+            }
+        }
+        cout<<endl;
+    }
+}
+
+o/p-
+Enter the size : 5
+*****
+*   *
+*   *
+*   *
+*****
+    
+
+o/p - 
+Enter the size : 5
+      A
+     B B
+    C C C
+   D D D D
+  E E E E E
       
 */
