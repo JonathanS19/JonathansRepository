@@ -325,3 +325,13 @@ if wall_in_front() == True:
             turn_left()
             while wall_in_front() == True:
                 turn_left()
+# Patterns 
+
+# Square
+print("Enter a value :")
+n = int(input())
+
+for i in range(0,n):
+    for j in range(0,n):
+        print("*",end = " ")
+    print("\n")
