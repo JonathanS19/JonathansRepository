@@ -335,3 +335,31 @@ for i in range(0,n):
     for j in range(0,n):
         print("*",end = " ")
     print("\n")
+
+#Linear search / Brute force method
+card = []
+
+#Defining the function 
+# Brute Force
+def find(card,query):
+    cnt=0
+    for i in range(0,n):
+        cnt+=1
+        if card[i] == query:
+            print("The number of seraches = ",cnt)
+            break
+
+# Enter Cards in decending level 
+print("Enter the number of cards : ")
+n = int(input())
+
+#Enter the query
+query = int(input())
+
+for i in range(0,n):
+    card.append(int(input()))
+
+#Using the function 
+print("Enter the number you seek : ")
+query = int(input())    
+result = find(card,query)
