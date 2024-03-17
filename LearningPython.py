@@ -363,3 +363,41 @@ for i in range(0,n):
 print("Enter the number you seek : ")
 query = int(input())    
 result = find(card,query)
+
+#Binary search 
+
+#Creating a array and taking the values
+
+arr = []
+key = 0
+print("Enter the array size : ") 
+n = int(input())
+
+print("\nEnter the array values : ")
+for i in range(0,n):
+    arr.append(int(input()))
+
+print("\nEnter the query value : ")
+query = int(input())
+
+#Reverse the array 
+revarr = sorted(arr,reverse=True)
+
+#Search for query element 
+hi,lo = 0,n-1
+while hi<=lo:
+    mid = (hi+lo)//2
+    midval = revarr[mid]
+
+    if query == revarr[mid] :
+        print("The value of the query is found at Position : ",mid-1)
+        key = 1
+        break
+    elif query > revarr[mid] :
+        lo = mid-1
+    elif query < revarr[mid] :
+        hi = mid+1
+    print("\nThe midval : ",midval)
+
+if key == 0:
+    print("\nValue doesnt exist in the array !!")  
