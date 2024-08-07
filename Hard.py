@@ -1,6 +1,12 @@
 #Collection of solved leet code hard problems
 1)
-str_num = str(num)
+class Solution(object):
+    def numberToWords(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        str_num = str(num)
         size = len(str_num)
         
         num_value = {
@@ -14,10 +20,19 @@ str_num = str(num)
 
         count = 0
         mod = 10
+        wrd = ""
+        
         for i in range(size):
             if i!= 0 :
                 mod *= 10
-            curr = num%mod
-            print({curr})
+                curr = num%mod
+                prev = num%(mod/10)
+                val = curr-prev
+                wrd.join(num_value[val])
+            else:
+                curr = num%10
+                wrd.join(num_value[curr])
         
+        
+        print(wrd)
         return 0
