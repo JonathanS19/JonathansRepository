@@ -43,26 +43,19 @@ class Solution:
 
         for val in bills:
             sum+=val
-            if val == 5:
-                fives+=1
-            elif val == 10:
-                tens+=1
-            else:
-                twenties+=1
-
         chg = sum - (len(bills)*5)
-        print(chg,"\n")
-        ovr = 0
+        print(chg)
 
-        for i,curr in enumerate(bills):
-            ovr = curr
-            if curr == chg:
-                return True
-            for j,next in enumerate(bills[i+1:]):
-                ovr += next
-                print(ovr)
-                if next == chg:
-                    return True
-                elif ovr == chg:
-                    return True
+        if chg in bills:
+            return True
+
+        for i,val1 in enumerate(bills):
+            ovr = val1
+            if val1 == 5:
+                continue
+            else:
+                for val2 in bills[:i+1]:
+                    ovr += val2
+                    if ovr == chg:
+                        return True
         return False
