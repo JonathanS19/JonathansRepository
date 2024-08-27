@@ -61,20 +61,24 @@ class Solution:
         return False
 
 3)2206. Divide Array Into Equal Pairs
-
 class Solution:
     def divideArray(self, nums: List[int]) -> bool:
         
-        new=[]
+        dist = list(set(nums))
+        new = []
 
-        for i,val1 in enumerate(nums) :
-            for j,val2 in enumerate(nums[i+1:len(nums)-1]):
-                print("new ",new)
-                if val1 == val2 :
-                    new.append(val2)
+        for i,val1 in enumerate(dist):
+            count = 0
+            for j,val2 in enumerate(nums):
+                if val1 == val2:
+                    count += 1
+                elif j == len(nums)-1:
+                    if count%2 == 0:
+                        continue
+                    else:
+                        return False
                 else:
                     continue
-        print(len(new),len(nums)//2)
-        if len(new) == len(nums)//2:
-            return True
-        return False
+        return True
+
+
