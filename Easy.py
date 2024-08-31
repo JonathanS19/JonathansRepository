@@ -104,3 +104,42 @@ class Solution(object):
         print(no_spcs)
         return count
 
+        (or)
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        #No of whitespaces
+        lst_spc = s.rindex(" ")
+        count = 0
+
+        for i in range(lst_spc,len(s)-1):
+            if i != " " or "-":
+                count+=1
+        
+        if count!=0:
+            return count
+
+        else:
+            for i in range(1,len(s)-1):
+                count1 = 0
+                no_spcs  = s.count(" ")-i
+                for j in range(len(s)-1):
+                    if s[j] == " ":
+                        count1+=1
+                        print("count : ",count1)
+                        print("no of spaces : ",no_spcs)
+                        print(s[j+1])
+                    if count1 == no_spcs and s[j+1] != " " :
+                        print("was here")
+                        for k in range(j,len(s)-1):
+                            if k == r"\w" and k != " ":
+                                count+=1
+                        print("vnvnfvnfjnvjfvfxkhvbhbhbvbvjfdbvfsbvkb : ",count)
+                        return count 
+                    else:
+                        continue
+        return 0
