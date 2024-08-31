@@ -112,8 +112,9 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        #No of whitespaces
-        lst_spc = s.rindex(" ")
+        try:
+            lst_spc = s.rindex(" ")
+            
         count = 0
 
         for i in range(lst_spc,len(s)-1):
@@ -130,16 +131,16 @@ class Solution(object):
                 for j in range(len(s)-1):
                     if s[j] == " ":
                         count1+=1
-                        print("count : ",count1)
-                        print("no of spaces : ",no_spcs)
-                        print(s[j+1])
-                    if count1 == no_spcs and s[j+1] != " " :
-                        print("was here")
-                        for k in range(j,len(s)-1):
-                            if k == r"\w" and k != " ":
-                                count+=1
-                        print("vnvnfvnfjnvjfvfxkhvbhbhbvbvjfdbvfsbvkb : ",count)
-                        return count 
+                        # print("count : ",count1)
+                        # print("no of spaces : ",no_spcs)
+                        if count1 == no_spcs and s[j+1] != " " :
+                            for k in range(j+1,len(s)-1):
+                                if k != " ":
+                                    count+=1
+                                elif k == " ":
+                                    break
+                            count-=1
+                            return count 
                     else:
                         continue
         return 0
