@@ -81,4 +81,26 @@ class Solution:
                     continue
         return True
 
+4)58. Length of Last Word
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        #No of whitespaces
+        no_spcs  = s.count(" ")
+        lst_spc = s.rindex(" ")
+        count = 0
+
+        for i in range(lst_spc,len(s)-1):
+            if i != " " or "-":
+                count+=1
+        
+        if count == 0:
+            nxt_spc = s.find(" ",0,)
+            if s[]
+
+        print(no_spcs)
+        return count
 
