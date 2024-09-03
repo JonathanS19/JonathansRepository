@@ -144,3 +144,36 @@ class Solution(object):
                     else:
                         continue
         return 0
+5)1945. Sum of Digits of String After Convert
+class Solution:
+    def getLucky(self, s: str, k: int) -> int:
+        alp = {}
+        count = 1
+
+        for i in range(97,123):
+            alp[chr(i)] = str(count)
+            count+=1
+
+        num_val = 0
+
+        if k == 1:
+            for val in s :
+                num_val+=int(alp[val])
+        else :
+            for val in s :
+                cnt = 1
+                lst1 = list(alp[val])
+                print("lst1 : ",lst1)
+                for val in lst1:
+                    num_val += int(val)
+                print("sum1 : ",num_val)
+
+                while cnt!=k :
+                    lst2 = list(str(num_val))
+                    print("lst2 : ", lst2)
+                    for val in lst2:
+                        num_val+=int(val)
+                    print("sum2 :",num_val)
+                    cnt+=1
+
+        return num_val
