@@ -179,3 +179,20 @@ class Solution:
                 # print("sum2 :",num_val)
                 cnt+=1
         return num_val
+6)2287. Rearrange Characters to Make Target String
+class Solution:
+    def rearrangeCharacters(self, s: str, target: str) -> int:
+        chars = list(target)
+        occ = {}
+        for char in chars:
+            count = 0
+            for val in s:
+                if char == val:
+                    count+=1
+            if char in occ:
+                continue
+            else:
+                occ.update({char : count})
+        if len(occ) == 1 and len(chars) == min(occ.values()):
+            return 1
+        return min(occ.values())
