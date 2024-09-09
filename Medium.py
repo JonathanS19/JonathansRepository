@@ -41,3 +41,19 @@ class Solution:
             return 0
         else:
             return res
+3)2586. Count the Number of Vowel Strings in Range
+class Solution:
+    def originalDigits(self, s: str) -> str:
+        alp = {}
+        lst =list(s)
+
+        for ltr1 in s:
+            count = 0
+            for ltr2 in s :
+                if lt2 in alp :
+                    break
+                if ltr1 == ltr2:
+                    count+=1
+                alp[ltr1] = count
+        print(alp)
+        return 0
