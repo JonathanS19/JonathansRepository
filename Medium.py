@@ -64,16 +64,21 @@ class Solution:
         result= []
 
         for i,str1 in enumerate(strs):
-            srt1 = sorted(str1)
-            sub = []
-            if str1 not in anaMap:
-                anaMap[str(srt1)] = i
-                for str2 in (strs) :
-                    srt2 = sorted(str2)
-                    if srt1 == srt2 :
+
+            srt1 = str(sorted(str1))
+
+            # if srt1 in anaMap:
+            #     continue
+
+            if srt1 not in anaMap:
+                anaMap[srt1] = i
+                sub = []
+                for str2 in strs:
+                    srt2 = str(sorted(str2))
+                    if srt2 == srt1:
                         sub.append(str2)
-                    else:
-                        continue
             else:
                 continue
             result.append(sub)
+
+        return result
