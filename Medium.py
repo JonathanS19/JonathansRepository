@@ -57,3 +57,23 @@ class Solution:
                 alp[ltr1] = count
         print(alp)
         return 0
+4)49. Group Anagrams
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        anaMap = {}
+        result= []
+
+        for i,str1 in enumerate(strs):
+            srt1 = sorted(str1)
+            sub = []
+            if str1 not in anaMap:
+                anaMap[str(srt1)] = i
+                for str2 in (strs) :
+                    srt2 = sorted(str2)
+                    if srt1 == srt2 :
+                        sub.append(str2)
+                    else:
+                        continue
+            else:
+                continue
+            result.append(sub)
