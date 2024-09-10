@@ -58,27 +58,17 @@ class Solution:
         print(alp)
         return 0
 4)49. Group Anagrams
+from collections import defaultdict 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anaMap = {}
+        anaMap = defaultdict(list)
         result= []
 
-        for i,str1 in enumerate(strs):
-
-            srt1 = str(sorted(str1))
-
-            # if srt1 in anaMap:
-            #     continue
-
-            if srt1 not in anaMap:
-                anaMap[srt1] = i
-                sub = []
-                for str2 in strs:
-                    srt2 = str(sorted(str2))
-                    if srt2 == srt1:
-                        sub.append(str2)
-            else:
-                continue
-            result.append(sub)
+        for s in strs:
+            srt = tuple(sorted(s))
+            anaMap[srt].append(s)
+        
+        for val in anaMap.values():
+            result.append(val)
 
         return result
