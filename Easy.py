@@ -271,3 +271,19 @@ class Solution(object):
                         continue
             print(nums)
             return len(nums)
+10)
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s = list(s)
+        t = list(t)
+        
+        if len(s)>len(t)
+        for ltr1 in t:
+            print("s",s)
+            for i,ltr2 in enumerate(s):
+                if ltr1 == ltr2:
+                    s.pop(i)
+                    break
+        if s!=[]:
+            return False
+        return True
