@@ -218,4 +218,21 @@ class Solution:
             print("Count : ",count)
 
         return count
-                 
+8)2220. Minimum Bit Flips to Convert Number
+class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        start = format(start,'b')
+        goal = format(goal,'b')
+
+        count = 0 
+        
+        for val1,val2 in zip(start[::-1],goal[::-1]):
+            if val1 == val2:
+                continue
+            else:
+                count+=1
+
+        if len(start) > len(goal) or len(goal) > len(start):
+            count+=(abs(len(start)-len(goal)))
+            
+        return count
