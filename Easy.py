@@ -247,3 +247,27 @@ class Solution:
 
 
         return count
+9)27. Remove Element
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        if val not in nums :
+            return len(nums)
+        else:
+            #count of target val
+            count = 0 
+            for num in nums :
+                if num == val:
+                    count+=1
+            for i in range(0,count):
+                for i in range(0,len(nums)-1):
+                    if nums[i] == val:
+                        del nums[i]
+                    else:
+                        continue
+            print(nums)
+            return len(nums)
