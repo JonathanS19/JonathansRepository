@@ -232,7 +232,18 @@ class Solution:
             else:
                 count+=1
 
-        if len(start) > len(goal) or len(goal) > len(start):
+        if len(start) != len(goal):
+            max_val = max(len(start),len(goal))
+            min_val = min(len(start),len(goal))
+
             count+=(abs(len(start)-len(goal)))
-            
+            for i in range(max_val - min_val) :
+                if len(goal) == max_val:
+                    if goal[i] == '0':
+                        count-=1
+                else:
+                    if start[i] == '0':
+                        count-=1
+
+
         return count
