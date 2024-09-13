@@ -196,3 +196,26 @@ class Solution:
         if len(occ) == 1 and len(chars) == min(occ.values()):
             return 1
         return min(occ.values())
+7)1684. Count the Number of Consistent Strings
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        count = 0
+        allowed = str(list(allowed))
+        print(allowed)
+
+        for word in words :
+            flag = 0
+            for l in word:
+                print("l :",l)
+                if l in allowed:
+                    flag = 0
+                else:
+                    flag = 1
+                    break
+                print("flag : ",flag)
+            if flag == 0:
+                count+=1
+            print("Count : ",count)
+
+        return count
+                 
