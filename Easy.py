@@ -288,6 +288,23 @@ class Solution:
             else:
                 return False
         return True 
+        
+    (or)
+    
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s = list(s)
+        t = list(t)
+        if len(s) != len(t):
+            return False
+        for val1 in s:
+            cnt1 = s.count(val1)
+            cnt2 = t.count(val1)
+            if cnt1 == cnt2:
+                continue
+            else:
+                return False
+        return True
 11)1037. Valid Boomerang
 class Solution:
     def isBoomerang(self, points: List[List[int]]) -> bool:
