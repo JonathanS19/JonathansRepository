@@ -271,19 +271,33 @@ class Solution(object):
                         continue
             print(nums)
             return len(nums)
-10)
+10)242. Valid Anagram
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         s = list(s)
-        t = list(t)
-        
-        if len(s)>len(t)
-        for ltr1 in t:
-            print("s",s)
-            for i,ltr2 in enumerate(s):
-                if ltr1 == ltr2:
-                    s.pop(i)
-                    break
-        if s!=[]:
+        t = list(s)
+        if len(s) != len(t):
             return False
-        return True
+        for val1 in (s):
+            cnt1 = s.count(val1)
+            print(cnt1)
+            cnt2 = t.count(val1)
+            print(cnt2)
+            if cnt1 == cnt2:
+                continue
+            else:
+                return False
+        return True 
+11)1037. Valid Boomerang
+class Solution:
+    def isBoomerang(self, points: List[List[int]]) -> bool:
+        # for i in range(len(points)):
+        #     print(List[i])
+        for point in points:
+            for i in range(len(point)-1):
+                if point[i] == point[i+1]:
+                    flag = 0
+                else:
+                    flag = 1
+                    return True
+        return False
