@@ -401,3 +401,18 @@ while hi<=lo:
 
 if key == 0:
     print("\nValue doesnt exist in the array !!")  
+
+#Sorting
+
+#Bubble Sorting
+arr = [3, 1, 2, 1, 3]
+n = 5
+
+for i in range(n):
+    min = arr[i]
+    for j in range(i+1,n):
+        if arr[j]<arr[i]:
+            var = arr[j]
+            arr[j] = arr[i]
+            arr[i] = var
+print(arr)
