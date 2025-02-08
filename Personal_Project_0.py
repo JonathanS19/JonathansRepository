@@ -343,3 +343,50 @@ def html_data_download():
 
         driver.quit()
     print("Company data downloaded and done")
+
+9)
+
+#  Scraping the data from html files without considering that already exists 
+
+def stock_data_scrape(company_names):
+    headers = ["Dates","Open","High","Low","Close","Adj Close","Volume"]
+
+    for name in company_names:
+        
+        html_name = name + "_Data.html"
+        csv_name = name + "_Data.csv"
+
+        html_folder_name = "Stocks_html_files"
+        csv_folder_name = "Stocks_Data"
+
+        html_file_path = os.path.join(html_folder_name,html_name)
+        csv_file_path = os.path.join(csv_folder_name,csv_name)
+
+        if  csv_name in os.listdir("Stocks_Data") :
+
+            print(name + " already exist's")
+        
+        else:
+            with open(html_file_path,'r',encoding='utf-8') as file:
+                page = file.read()
+
+            with open(csv_file_path,'w',newline="",encoding="utf-8") as file :
+                writer = csv.writer(file)
+
+                soup = BeautifulSoup(page,'lxml')
+
+                values = soup.find("tbody").find_all("tr")
+                writer.writerow(headers)
+
+                for val in values :
+                    csv_list = []
+                    elems = val.find_all("td")
+
+                    for i,elem in enumerate(elems) :
+                        csv_list.append(elem.text.strip())
+
+                    if csv_list :
+                        writer.writerow(csv_list)
+            print(name + " created ")
+
+    print("Stock data scraped and done") 
