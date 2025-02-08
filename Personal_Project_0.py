@@ -390,3 +390,174 @@ def stock_data_scrape(company_names):
             print(name + " created ")
 
     print("Stock data scraped and done") 
+
+10) 
+
+# Finding new data and appending 
+
+# def add_newdata():
+driver = webdriver.Chrome()
+
+for name in company_names:
+
+    url = "https://finance.yahoo.com/quote/"+name+".NS/history/"
+
+    driver.get(url)
+    cnt = 0
+
+    while True:
+        try:
+            table = WebDriverWait(driver,10).until(
+                EC.presence_of_element_located((By.TAG_NAME,'tbody'))
+            )
+
+            page = driver.page_source
+            soup = BeautifulSoup(page,'lxml')
+
+            datas = soup.find("table").find_all('td')
+
+            file_name = name + '_Data.csv'
+            folder_name = 'Stocks_Data'
+            folder_path = os.path.join(folder_name,file_name)
+
+            with open(file_name,'r',encoding='utf-8') as file:
+                read_data = csv.reader(file)
+
+
+        except Exception as e:
+
+            cnt += 1
+            if cnt <= 1:
+                driver.refresh()
+                print(name + " page is refreshed !!")
+            elif cnt == 2:
+                driver.close()
+                driver = webdriver.Chrome()
+                driver.get(url)
+                print(name + " page is restarted !!")
+            else:
+                print("Process failed !!")
+                break
+
+driver.quit()
+
+# Alternative method 
+file_name = 'ACC_Data.csv'
+folder_name = 'Test'
+folder_path = os.path.join(folder_name,file_name)
+last_date = []
+new_val = []
+flag = 0
+url = 'https://finance.yahoo.com/quote/ACC.NS/history/'
+
+with open(folder_path,'r',encoding='utf-8') as file:
+    read_data = csv.reader(file)
+
+    cnt  = 0
+    for data in read_data:
+        cnt+=1
+        if cnt == 2:
+            last_date = data[0]
+            break
+
+
+with open(folder_path,'a',newline='',encoding='utf-8') as file:
+    writer = csv.writer(file)
+
+    driver = webdriver.Chrome()
+    driver.get(url)
+
+    page = driver.page_source
+    soup = BeautifulSoup(page,'lxml')
+
+    values = soup.find("tbody").find_all("tr")
+
+    for value in values :
+        elems = value.find_all('td')
+        for elem in elems :
+            if elem.text == last_date:
+              flag = 1
+            else:
+                new_val.append(elem.text)
+        if flag == 1:
+            break
+        # else:
+        #     print(new_val)
+        #     new_val = []
+        else:
+            writer.writerow(new_val)
+            print(new_val)
+            new_val = []  
+driver.quit()
+
+# #Sample Output 
+# ['Feb 6, 2025', '2,050.00', '2,059.00', '1,985.70', '1,998.50', '1,998.50', '275,909']
+# ['Feb 5, 2025', '2,037.00', '2,064.65', '2,022.50', '2,046.45', '2,046.45', '258,940']
+# ['Feb 4, 2025', '1,999.90', '2,045.00', '1,999.00', '2,026.35', '2,026.35', '356,440']
+# ['Feb 3, 2025', '1,990.00', '1,995.80', '1,954.55', '1,990.50', '1,990.50', '220,895']
+
+11) 
+# Arrange in order but havent tested it yet due to issues with the read only permissions and also found an alternative but i need to figure this and use this method as its more efficient and faster that is appending recently scraped values
+
+df = pd.read_csv(folder_name)
+
+df = df.sort_values(by=df.columns[0])
+
+df.to_csv(folder_name,index=False)
+
+12)
+
+#Random shit whose function i cant figure out and cant be bothered with 
+
+folder_name = 'Stocks_Data'
+for file_name in company_names :
+    folder_path = os.path.join(folder_name,file_name+'.csv')
+    print(folder_path)
+    last_date = []
+    new_val = []
+    flag = 0
+    url = 'https://finance.yahoo.com/quote/'+ file_name +'/history/'
+    print(url)
+
+
+    with open(folder_path,'r',encoding='utf-8') as file:
+        read_data = csv.reader(file)
+
+        cnt  = 0
+        for data in read_data:
+            cnt+=1
+            if cnt == 2:
+                last_date = data[0]
+                break
+        
+    print("The last date is " + str(last_date))
+
+    with open(folder_path,'a',newline='',encoding='utf-8') as file:
+        writer = csv.writer(file)
+
+        driver = webdriver.Chrome()
+        driver.get(url)
+
+        page = driver.page_source
+        soup = BeautifulSoup(page,'lxml')
+
+        values = soup.find("tbody").find_all("tr")
+
+        for value in values :
+            elems = value.find_all('td')
+            for elem in elems :
+                if elem.text == last_date:
+                    flag = 1
+                else:
+                    new_val.append(elem.text)
+            if flag == 1:
+                break
+            else:
+                print(new_val)
+                new_val = []
+            # else:
+            #     writer.writerow(new_val)
+            #     print(new_val)
+            #     new_val = []  
+    driver.quit()
+
